@@ -131,3 +131,18 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("beforeunload", () => {
   autoSubmit("إغلاق الصفحة");
 });
+
+document.getElementById("start").onclick = function () {
+    let el = document.documentElement;
+
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+    }
+
+    // لو عايز يدخل صفحة الكويز
+    // window.location.href = "quiz.html";
+};
